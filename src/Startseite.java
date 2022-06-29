@@ -3,7 +3,6 @@ import java.awt.*;
 import java.io.File;
 
 public class Startseite extends JComponent {
-
     private static final Color backgroundColor = new Color(86, 199, 165);
     private static final Color schriftColor = new Color(207, 58, 25);
 
@@ -74,6 +73,5 @@ public class Startseite extends JComponent {
 
         g2D.setFont(new Font("Online", Font.PLAIN, 15));
         g2D.drawString("Online Spielen", 347, 337);
-
     }
 }

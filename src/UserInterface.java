@@ -4,7 +4,6 @@ import java.awt.*;
 import java.io.File;
 
 public class UserInterface {
-
     static JFrame startseiteWindow;
     static JFrame gameWindow;
     static JFrame nameEingabeWindow;

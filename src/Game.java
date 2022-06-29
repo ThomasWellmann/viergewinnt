@@ -60,7 +60,6 @@ public class Game extends JComponent {
                 board[row][column] = 0;
             }
         }
-
     }
 
     public static void playChip(int column) {
@@ -79,7 +78,6 @@ public class Game extends JComponent {
             } else {
                 activePlayer = 1;
             }
-
             checkBoard();
         }
     }
@@ -230,7 +228,6 @@ public class Game extends JComponent {
             return;
         }
 
-        // check columns for a winner
         int winnerInColumns = checkColumnsForWinner();
         String winnerNameInColumns = getWinnerName(winnerInColumns);
         if (winnerInColumns > 0) {
@@ -240,7 +237,6 @@ public class Game extends JComponent {
             return;
         }
 
-        // check diagonals for a winner
         int winnerInDiagonals = checkUpperLeftToLowerRightForWinner();
         String winnerNameInDiagoals = getWinnerName(winnerInDiagonals);
         if (winnerInDiagonals > 0) {

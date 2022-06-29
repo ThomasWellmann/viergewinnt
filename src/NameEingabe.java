@@ -3,7 +3,6 @@ import java.awt.*;
 import java.io.File;
 
 public class NameEingabe extends JComponent {
-
     private static final Color backgroundColor = new Color(86, 199, 165);
     private static final Color schriftColor = new Color(207, 58, 25);
     static JTextField player2Name = new JTextField("Spieler 2");
@@ -100,6 +99,5 @@ public class NameEingabe extends JComponent {
         player2Name.setForeground(Color.gray);
         player2Name.setBackground(new Color(0,0,0,0));
         UserInterface.nameEingabeWindow.add(player2Name);
-
     }
 }

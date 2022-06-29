@@ -147,8 +147,6 @@ public class Board extends JComponent {
                 g2D.fillOval(280, 50, 10, 10);
             }
         }
-
-
     }
     private void renderBoard(Graphics g2D, int[][] board) {
 
@@ -157,8 +155,6 @@ public class Board extends JComponent {
 
         for (int row = 0; row < Game.ROWS; row++) {
             for (int column = 0; column < Game.COLUMNS; column++) {
-
-
                 if (column == previewCol && row == previewRow && Game.winner == 0) {
                     renderChip(g2D, xPosition + (column * chipDiameter) + (column * spacing), yPosition + (row * chipDiameter) + (row * spacing), Game.activePlayer +4);
                 } else {
