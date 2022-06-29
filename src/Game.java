@@ -90,9 +90,6 @@ public class Game extends JComponent {
             if (board[row][column] > 0 && board[row][column] < 5) {
                 numberOfChipsInColumn = numberOfChipsInColumn + 1;
             }
-            if (row != Board.previewRow && column != Board.previewCol) {
-
-            }
         }
         return numberOfChipsInColumn;
     }
@@ -225,7 +222,6 @@ public class Game extends JComponent {
         }
 
         int winnerInRow = checkRowsForWinner();
-        getWinnerName(winnerInRow);
         String winnerNameInRow = getWinnerName(winnerInRow);
         if (winnerInRow > 0) {
             statusMessage = winnerNameInRow + " hat gewonnen";
@@ -236,7 +232,6 @@ public class Game extends JComponent {
 
         // check columns for a winner
         int winnerInColumns = checkColumnsForWinner();
-        getWinnerName(winnerInColumns);
         String winnerNameInColumns = getWinnerName(winnerInColumns);
         if (winnerInColumns > 0) {
             statusMessage = winnerNameInColumns + " hat gewonnen";
@@ -247,7 +242,6 @@ public class Game extends JComponent {
 
         // check diagonals for a winner
         int winnerInDiagonals = checkUpperLeftToLowerRightForWinner();
-        getWinnerName(winnerInDiagonals);
         String winnerNameInDiagoals = getWinnerName(winnerInDiagonals);
         if (winnerInDiagonals > 0) {
             statusMessage = winnerNameInDiagoals + " hat gewonnen";
@@ -258,10 +252,8 @@ public class Game extends JComponent {
         }
 
         winnerInDiagonals = checkLowerLeftToUpperRight();
-        getWinnerName(winnerInDiagonals);
         winnerNameInDiagoals = getWinnerName(winnerInDiagonals);
         if (winnerInDiagonals > 0) {
-            getWinnerName(winnerInDiagonals);
             statusMessage = winnerNameInDiagoals + " hat gewonnen";
             winner = winnerInDiagonals;
             activePlayer = 0;

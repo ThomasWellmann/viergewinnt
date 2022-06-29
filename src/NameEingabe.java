@@ -81,16 +81,24 @@ public class NameEingabe extends JComponent {
 
         g2D.setColor(new Color(161, 6, 3));
         g2D.fillOval(290, 325, 10, 10);
+
+        g2D.setColor(Color.white);
+        g2D.fillRoundRect(322, 247, 195, 45, 10, 10);
+        g2D.fillRoundRect(322, 307, 195, 45, 10, 10);
+
+        g2D.setColor(Color.darkGray);
+        g2D.drawRoundRect(322, 247, 195, 45, 10, 10);
+        g2D.drawRoundRect(322, 307, 195, 45, 10, 10);
     }
     public static void setTextFild() {
         player1Name.setBounds(320, 245, 200, 50);
         player1Name.setForeground(Color.gray);
-        player1Name.setBackground(new Color(220,220,220));
+        player1Name.setBackground(new Color(0,0,0,0));
         UserInterface.nameEingabeWindow.add(player1Name);
 
         player2Name.setBounds(320, 305, 200, 50);
         player2Name.setForeground(Color.gray);
-        player2Name.setBackground(new Color(220,220,220));
+        player2Name.setBackground(new Color(0,0,0,0));
         UserInterface.nameEingabeWindow.add(player2Name);
 
     }
