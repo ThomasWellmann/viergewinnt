@@ -12,7 +12,7 @@ public class UserInterface {
         startseiteWindow = new JFrame();
 
         startseiteWindow.setSize(800, 600);
-        startseiteWindow.setTitle("VierGewinnt Startseite");
+        startseiteWindow.setTitle("4 Gewinnt Startseite");
         startseiteWindow.setResizable(false);
     }
 
@@ -27,7 +27,7 @@ public class UserInterface {
 
                 nameEingabeWindow = new JFrame();
                 nameEingabeWindow.setSize(800, 600);
-                nameEingabeWindow.setTitle("VierGewinnt");
+                nameEingabeWindow.setTitle("4 Gewinnt Name Eingabe");
                 nameEingabeWindow.setResizable(false);
                 initializeN();
             }
@@ -47,7 +47,7 @@ public class UserInterface {
 
                 gameWindow = new JFrame();
                 gameWindow.setSize(800, 600);
-                gameWindow.setTitle("VierGewinnt");
+                gameWindow.setTitle("4 Gewinnt Spiel");
                 gameWindow.setResizable(false);
                 Game.startNewGame();
                 initialize();
@@ -109,19 +109,19 @@ public class UserInterface {
                 } else {
                     int row;
                     int col;
-                    if(currentPoint.getX() > 120 && currentPoint.getX() < 190) {
+                    if(currentPoint.getX() > 130 && currentPoint.getX() < 203) {
                         col = 0;
-                    } else if(currentPoint.getX() > 195 && currentPoint.getX() < 265) {
+                    } else if(currentPoint.getX() > 204 && currentPoint.getX() < 277) {
                         col = 1;
-                    } else if(currentPoint.getX() > 270 && currentPoint.getX() < 340) {
+                    } else if(currentPoint.getX() > 278 && currentPoint.getX() < 351) {
                         col = 2;
-                    } else if(currentPoint.getX() > 345 && currentPoint.getX() < 415) {
+                    } else if(currentPoint.getX() > 352 && currentPoint.getX() < 425) {
                         col = 3;
-                    } else if(currentPoint.getX() > 420 && currentPoint.getX() < 490) {
+                    } else if(currentPoint.getX() > 426 && currentPoint.getX() < 499) {
                         col = 4;
-                    } else if(currentPoint.getX() > 495 && currentPoint.getX() < 565) {
+                    } else if(currentPoint.getX() > 500 && currentPoint.getX() < 573) {
                         col = 5;
-                    } else if(currentPoint.getX() > 570 && currentPoint.getX() < 640) {
+                    } else if(currentPoint.getX() > 574 && currentPoint.getX() < 647) {
                         col = 6;
                     } else {
                         return;
