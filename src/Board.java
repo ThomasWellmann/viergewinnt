@@ -155,7 +155,7 @@ public class Board extends JComponent {
 
         for (int row = 0; row < Game.ROWS; row++) {
             for (int column = 0; column < Game.COLUMNS; column++) {
-                if (column == previewCol && row == previewRow && Game.winner == 0) {
+                if (column == previewCol && row == previewRow && Game.winner == 0 && !UserInterface.mouseOutOfBoard) {
                     renderChip(g2D, xPosition + (column * chipDiameter) + (column * spacing), yPosition + (row * chipDiameter) + (row * spacing), Game.activePlayer +4);
                 } else {
                     renderChip(g2D, xPosition + (column * chipDiameter) + (column * spacing), yPosition + (row * chipDiameter) + (row * spacing), board[row][column]);

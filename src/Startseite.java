@@ -64,14 +64,5 @@ public class Startseite extends JComponent {
 
         g2D.setColor(schriftColor);
         g2D.drawString("4 GEWINNT", 275, 220);
-
-        g2D.setColor(new Color(200, 200, 200));
-        g2D.fillRoundRect(327, 310, 144, 47, 10, 10);
-
-        g2D.setColor(new Color(125, 125, 125, 140));
-        g2D.drawRoundRect(327, 310, 144, 47, 10, 10);
-
-        g2D.setFont(new Font("Online", Font.PLAIN, 15));
-        g2D.drawString("Online Spielen", 347, 337);
     }
 }

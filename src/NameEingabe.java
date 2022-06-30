@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 public class NameEingabe extends JComponent {
@@ -88,6 +90,8 @@ public class NameEingabe extends JComponent {
         g2D.setColor(Color.darkGray);
         g2D.drawRoundRect(322, 247, 195, 45, 10, 10);
         g2D.drawRoundRect(322, 307, 195, 45, 10, 10);
+
+        Game.getSpielerName();
     }
     public static void setTextFild() {
         player1Name.setBounds(320, 245, 200, 50);

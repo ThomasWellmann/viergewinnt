@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.util.Objects;
+import java.awt.event.*;
 
 public class Game extends JComponent {
 
@@ -10,6 +12,8 @@ public class Game extends JComponent {
     public static final int NUMBER_OF_PLAYERS = 2;
     public static String nameSpieler1;
     public static String nameSpieler2;
+    public static int nrOfLetters1;
+    public static int nrOfLetters2;
     public static String noName = "no name";
     private static final int[][] EMPTY_BOARD = {
             {0, 0, 0, 0, 0, 0, 0},
@@ -22,6 +26,20 @@ public class Game extends JComponent {
     public static void getSpielerName() {
         nameSpieler1 = NameEingabe.player1Name.getText();
         nameSpieler2 = NameEingabe.player2Name.getText();
+
+        nrOfLetters1 = NameEingabe.player1Name.getText().length();
+        nrOfLetters2 = NameEingabe.player2Name.getText().length();
+
+        if (nrOfLetters1 > 15 || nrOfLetters2 > 15) {
+            UserInterface.hideStartButton();
+        } else {
+            UserInterface.showStartButton();
+        }
+
+        if (Objects.equals(nameSpieler1, "") || Objects.equals(nameSpieler2, "")) {
+            nameSpieler1 = "Spieler 1";
+            nameSpieler2 = "Spieler 2";
+        }
     }
     public static String getAktuelleSpieler() {
         if (activePlayer == 1)

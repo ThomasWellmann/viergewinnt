@@ -7,6 +7,7 @@ public class UserInterface {
     static JFrame startseiteWindow;
     static JFrame gameWindow;
     static JFrame nameEingabeWindow;
+    static JButton buttonN = new JButton("Start");
 
     public UserInterface() {
         startseiteWindow = new JFrame();
@@ -15,12 +16,13 @@ public class UserInterface {
         startseiteWindow.setTitle("4 Gewinnt Startseite");
         startseiteWindow.setResizable(false);
     }
+    public static boolean mouseOutOfBoard;
 
     private void initializeButtonsS() {
 
-        JButton buttonS = new JButton("Locales Spiel");
-        buttonS.setBounds(325, 250, 150, 50);
-        buttonS.addActionListener(new ActionListener() {
+        JButton buttonLS = new JButton("Locales Spiel");
+        buttonLS.setBounds(325, 250, 150, 50);
+        buttonLS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 startseiteWindow.setVisible(false);
@@ -32,13 +34,17 @@ public class UserInterface {
                 initializeN();
             }
         });
-        buttonS.setVisible(true);
-        startseiteWindow.add(buttonS);
+        buttonLS.setVisible(true);
+        startseiteWindow.add(buttonLS);
+
+        JButton buttonOS = new JButton("Online Spiel");
+        buttonOS.setBounds(325, 310, 150, 50);
+        buttonOS.setVisible(true);
+        buttonOS.setEnabled(false);
+        startseiteWindow.add(buttonOS);
     }
 
     private void initializeButtonsN() {
-
-        JButton buttonN = new JButton("Start");
         buttonN.setBounds(350, 365, 100, 50);
         buttonN.addActionListener(new ActionListener() {
             @Override
@@ -68,6 +74,14 @@ public class UserInterface {
         startseiteButtom.setVisible(true);
         nameEingabeWindow.add(startseiteButtom);
         NameEingabe.setTextFild();
+    }
+
+    public static void hideStartButton() {
+        buttonN.setEnabled(false);
+    }
+
+    public static void showStartButton() {
+        buttonN.setEnabled(true);
     }
 
     private void initializeButtons() {
@@ -108,38 +122,40 @@ public class UserInterface {
                     return;
                 } else {
                     int row;
-                    int col;
+                    int col = 0;
                     if(currentPoint.getX() > 130 && currentPoint.getX() < 203) {
-                        col = 0;
-                    } else if(currentPoint.getX() > 204 && currentPoint.getX() < 277) {
                         col = 1;
-                    } else if(currentPoint.getX() > 278 && currentPoint.getX() < 351) {
+                    } else if(currentPoint.getX() > 204 && currentPoint.getX() < 277) {
                         col = 2;
-                    } else if(currentPoint.getX() > 352 && currentPoint.getX() < 425) {
+                    } else if(currentPoint.getX() > 278 && currentPoint.getX() < 351) {
                         col = 3;
-                    } else if(currentPoint.getX() > 426 && currentPoint.getX() < 499) {
+                    } else if(currentPoint.getX() > 352 && currentPoint.getX() < 425) {
                         col = 4;
-                    } else if(currentPoint.getX() > 500 && currentPoint.getX() < 573) {
+                    } else if(currentPoint.getX() > 426 && currentPoint.getX() < 499) {
                         col = 5;
-                    } else if(currentPoint.getX() > 574 && currentPoint.getX() < 647) {
+                    } else if(currentPoint.getX() > 500 && currentPoint.getX() < 573) {
                         col = 6;
+                    } else if(currentPoint.getX() > 574 && currentPoint.getX() < 647) {
+                        col = 7;
                     } else {
-                        return;
+                        mouseOutOfBoard = true;
                     }
-                    row = Game.getRowForPreview(col);
-                    Board.previewCol = col;
-                    Board.previewRow = row;
-
+                    if (col > 0) {
+                        mouseOutOfBoard = false;
+                        row = Game.getRowForPreview(col - 1);
+                        Board.previewCol = col - 1;
+                        Board.previewRow = row;
+                    }
                 }
             }
         });
-        if (Game.winner > 0) {
+        if (Game.winner > 0 || mouseOutOfBoard) {
             return;
         } else {
             board.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
-                    if (Board.previewCol >= 0) {
+                    if (Board.previewCol >= 0 && !mouseOutOfBoard) {
                         Board.previewRow = Board.previewRow - 1;
                         Game.playChip(Board.previewCol);
                     }
