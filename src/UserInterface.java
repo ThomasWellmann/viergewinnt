@@ -173,6 +173,8 @@ public class UserInterface {
     public void initializeN() {
         initializeButtonsN();
         initializeNameEingabe();
+        NameEingabe.player1Name.setText("Spieler 1");
+        NameEingabe.player2Name.setText("Spieler 2");
         nameEingabeWindow.setVisible(true);
     }
 
