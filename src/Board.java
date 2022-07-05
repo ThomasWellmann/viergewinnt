@@ -20,7 +20,7 @@ public class Board extends JComponent {
         g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         try {
-            g2D.setFont(Font.createFont(Font.TRUETYPE_FONT, new File("/Users/thomascesar/Downloads/Aclonica/Aclonica-Regular.ttf")).deriveFont(Font.PLAIN, fontSize));
+            g2D.setFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\thoma\\IdeaProjects\\viergewinnt\\Aclonica-Regular.ttf")).deriveFont(Font.PLAIN, fontSize));
         } catch (Exception ex) {
             ex.printStackTrace();
             g2D.setFont(new Font("Default", Font.PLAIN, fontSize));

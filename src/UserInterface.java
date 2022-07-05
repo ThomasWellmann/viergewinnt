@@ -25,7 +25,7 @@ public class UserInterface {
         buttonLS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                startseiteWindow.setVisible(false);
+                startseiteWindow.dispose();
 
                 nameEingabeWindow = new JFrame();
                 nameEingabeWindow.setSize(800, 600);
@@ -49,13 +49,13 @@ public class UserInterface {
         buttonN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                nameEingabeWindow.setVisible(false);
+                nameEingabeWindow.dispose();
 
                 gameWindow = new JFrame();
                 gameWindow.setSize(800, 600);
                 gameWindow.setTitle("4 Gewinnt Spiel");
                 gameWindow.setResizable(false);
-                Game.startNewGame();
+                gameWindow.setVisible(true);
                 initialize();
             }
         });
@@ -67,7 +67,7 @@ public class UserInterface {
         startseiteButtom.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                nameEingabeWindow.setVisible(false);
+                nameEingabeWindow.dispose();
                 startseiteWindow.setVisible(true);
             }
         });
@@ -91,6 +91,7 @@ public class UserInterface {
         startseiteButtom.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                gameWindow.dispose();
                 startseiteWindow.setVisible(true);
             }
         });
@@ -168,7 +169,6 @@ public class UserInterface {
         initializeButtons();
         initializeBoard();
         Game.startNewGame();
-        gameWindow.setVisible(true);
     }
     public void initializeN() {
         initializeButtonsN();
